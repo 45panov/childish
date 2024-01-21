@@ -14,5 +14,10 @@
     ! [[ "${target_user[*]}" =~ "non-existing-username"  ]]
 }
 
+@test "get user index" {
+    [[ "$user_index" -eq 2  ]]
+}
 
-
+@test "get allowed time by user index" {
+    [[ "$allowed_time" -eq 3600 ]]
+} 
