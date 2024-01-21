@@ -2,10 +2,17 @@
 
 . ~/childish/childi.sh
 
-@test "childi.sh imported to first-test.bat" {
-    [ "$childish_loaded" -eq 1 ]
+@test "first item of target user array" {
+    [[ "${target_user[0]}" == "user-1" ]]
 }
 
-@test "config imported into childi.sh" {
-    [ "$config_loaded" -eq 1 ]
+@test "find whoami in target_user" {
+    [[   "${target_user[*]}" =~ `whoami`   ]]
 }
+
+@test "whoami is not in target_user" {
+    ! [[ "${target_user[*]}" =~ "non-existing-username"  ]]
+}
+
+
+
