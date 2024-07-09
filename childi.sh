@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./childish.conf
+. ~/childish/childish.conf
 
 # Exit script immediately if whoiam output is not in target_user.
 
@@ -12,6 +12,7 @@ if ! [[ "${target_user[*]}" =~ `whoami` ]]; then
     fi
 fi
 
+
 # Get index of current user in target_user array.
 user_index=""
 for i in "${!target_user[@]}"; do
@@ -19,6 +20,7 @@ for i in "${!target_user[@]}"; do
         user_index="${i}";
     fi
 done
+
 
 # Get allowed time from default_time array by user_index.
 allowed_time=${default_time[$user_index]}

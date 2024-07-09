@@ -21,3 +21,7 @@
 @test "get allowed time by user index" {
     [[ "$allowed_time" -eq 3600 ]]
 } 
+
+@test "sizes of arrays target_user and default_time must be equal" {
+    [[ "${#target_user[@]}" -eq "${#default_time[@]}" ]]
+}
