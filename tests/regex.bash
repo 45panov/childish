@@ -6,8 +6,8 @@
 #  Dummy variables which are to be replaced with dynamic ones in main script.
 username="aspanov"
 procname="tty7"
-dayweek="Sun"
-month="Jan"
+dayweek=$(echo $(LANG=en-us88591; date +"%a"))
+month=$(echo $(LANG=en-us88591; date +"%b"))
 day=14
 
 # Extract sessions' duration from dummy 'last' output (last.txt file). 
