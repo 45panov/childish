@@ -19,7 +19,7 @@ day=$(echo $(LANG=en-us88591; date +"%e"))
 #day=19
 
 
-# Extract finished sessions' duration from dummy 'last' output (last.txt file). 
+# Extract current session's duration from 'last' output). 
 start_of_current_session=$(last \
     | grep -E "${username}[[:space:]]*${procname}.*${dayweek}[[:space:]]*${month}[[:space:]]*${day}" \
     | grep -E gone \
